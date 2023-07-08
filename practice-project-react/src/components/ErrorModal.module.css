@@ -1,0 +1,37 @@
+.errorModal {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.errorModalContainer {
+  width: 40%;
+}
+
+.errorModalTitle {
+  padding: 0.7em;
+  background: purple;
+  color: white;
+  font-size: 1.6em;
+  border-radius: 0.5em 0.5em 0 0;
+}
+
+.errorModalContent {
+  padding: 2em 1em;
+  background: white;
+  border-radius: 0 0 0.5em 0.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.errorModalButton {
+  width: 5em;
+  align-self: end;
+}
