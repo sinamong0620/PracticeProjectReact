@@ -4,7 +4,7 @@ const UserInfo = (props) => {
   return (
     <div
       className={styles.userInfo}
-    >{`${props.userName} ${props.userAge}`}</div>
+    >{`${props.userName} (${props.userAge} years old)`}</div>
   );
 };
 export default UserInfo;
