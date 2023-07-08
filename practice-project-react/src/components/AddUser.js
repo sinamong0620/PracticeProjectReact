@@ -19,7 +19,21 @@ const AddUser = (props) => {
       age: userAge,
     };
 
-    props.onSaveExpenseData(expenseData);
+    if (userName !== "" && userAge !== "" && Number(userAge) > 0) {
+      props.onSaveExpenseData(expenseData);
+    } else {
+      const msg =
+        userName === ""
+          ? "Please enter a valid name and age"
+          : userAge === ""
+          ? "Please enter a valid name and age"
+          : userAge <= 0
+          ? "Please enter a valid age (> 0)"
+          : "";
+      props.onSaveErrorMessageData(msg);
+    }
+    setUserName("");
+    setUserAge("");
   };
   return (
     <>
@@ -27,12 +41,12 @@ const AddUser = (props) => {
         <form onSubmit={SubmitUserForm}>
           <label>Username</label>
           <div>
-            <input type="text" onChange={AddUserName} />
+            <input type="text" value={userName} onChange={AddUserName} />
           </div>
 
           <label>Age(Years)</label>
           <div>
-            <input type="text" onChange={AddUserAge} />
+            <input type="text" value={userAge} onChange={AddUserAge} />
           </div>
 
           <button>Add User</button>
